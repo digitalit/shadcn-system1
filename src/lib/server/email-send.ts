@@ -1,90 +1,60 @@
 import nodemailer from 'nodemailer';
-import * as aws from '@aws-sdk/client-ses';
-import {
-	FROM_EMAIL,
-	AWS_ACCESS_KEY_ID,
-	AWS_SECRET_ACCESS_KEY,
-	AWS_REGION,
-	AWS_API_VERSION
-} from '$env/static/private';
-//import { z } from "zod";
+import { env } from '$env/dynamic/private';
+
+const transporter = nodemailer.createTransport({
+	host: env.SMTP_HOST,
+	port: Number(env.SMTP_PORT),
+	secure: Number(env.SMTP_SECURE) === 1,
+	auth: {
+		user: env.SMTP_USER,
+		pass: env.SMTP_PASS
+	}
+});
+
 export default async function sendEmail(
 	email: string,
 	subject: string,
 	bodyHtml?: string,
 	bodyText?: string
 ) {
-	const hasAccessKeys = AWS_ACCESS_KEY_ID && AWS_SECRET_ACCESS_KEY;
-
-	const ses = new aws.SES({
-		apiVersion: AWS_API_VERSION,
-		region: AWS_REGION,
-		...(hasAccessKeys
-			? {
-					credentials: {
-						accessKeyId: AWS_ACCESS_KEY_ID || '',
-						secretAccessKey: AWS_SECRET_ACCESS_KEY || ''
-					}
-				}
-			: {})
-	});
-
-	// create Nodemailer SES transporter
-	const transporter = nodemailer.createTransport({
-		SES: { ses, aws }
-	});
-
-	try {
-		if (!bodyText) {
-			transporter.sendMail(
-				{
-					from: FROM_EMAIL,
+	if (env.SMTP_HOST && env.SMTP_PORT && env.SMTP_USER && env.SMTP_PASS && env.FROM_EMAIL) {
+		// create Nodemailer SMTP transporter
+		let info;
+		try {
+			if (!bodyText) {
+				info = await transporter.sendMail({
+					from: env.FROM_EMAIL,
 					to: email,
 					subject: subject,
 					html: bodyHtml
-				},
-				(err) => {
-					if (err) {
-						throw new Error(`Error sending email: ${JSON.stringify(err)}`);
-					}
-				}
-			);
-		} else if (!bodyHtml) {
-			transporter.sendMail(
-				{
-					from: FROM_EMAIL,
+				});
+			} else if (!bodyHtml) {
+				info = await transporter.sendMail({
+					from: env.FROM_EMAIL,
 					to: email,
 					subject: subject,
 					text: bodyText
-				},
-				(err) => {
-					if (err) {
-						throw new Error(`Error sending email: ${JSON.stringify(err)}`);
-					}
-				}
-			);
-		} else {
-			transporter.sendMail(
-				{
-					from: FROM_EMAIL,
+				});
+			} else {
+				info = await transporter.sendMail({
+					from: env.FROM_EMAIL,
 					to: email,
 					subject: subject,
 					html: bodyHtml,
 					text: bodyText
-				},
-				(err) => {
-					if (err) {
-						throw new Error(`Error sending email: ${JSON.stringify(err)}`);
-					}
-				}
-			);
+				});
+			}
+			console.log('E-mail sent successfully!');
+			console.log(info);
+			return {
+				statusCode: 200,
+				message: 'E-mail sent successfully.'
+			};
+		} catch (error) {
+			throw new Error(`Error sending email: ${JSON.stringify(error)}`);
 		}
-		console.log('E-mail sent successfully!');
-		return {
-			statusCode: 200,
-			message: 'E-mail sent successfully.'
-		};
-	} catch (error) {
-		throw new Error(`Error sending email: ${JSON.stringify(error)}`);
+	} else {
+		console.log(`Email in Log:\nSubject: ${subject}\nBody: ${bodyText}`);
+		return;
 	}
 }
