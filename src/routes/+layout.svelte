@@ -31,7 +31,7 @@
 <Toaster richColors />
 <div class="relative flex min-h-screen flex-col">
 	<Navigation {user} />
-	<div class="mt-8 md:mt-12">
+	<div class="mt-0 md:mt-2">
 		<slot />
 	</div>
 </div>
