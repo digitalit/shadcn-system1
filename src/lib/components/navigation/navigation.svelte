@@ -41,7 +41,7 @@
 <header class="bg-background sticky top-0 z-40 w-full border-b">
 	<div
 		class="flex {currentPage === '/dashboard'
-			? 'h-10'
+			? 'px-1 h-10'
 			: 'container h-16'}  items-center space-x-4 sm:justify-between sm:space-x-0"
 	>
 		<div class="flex gap-6 md:gap-10">
