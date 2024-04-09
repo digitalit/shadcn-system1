@@ -1,0 +1,20 @@
+{
+	"files.exclude": {
+		"**/.git": false,
+		"**/.svn": false,
+		"**/.hg": false,
+		"**/CVS": false,
+		"**/.env": false,
+		"**/.eslintignore": false,
+		"**/.eslintrc.cjs": false,
+		"**/.gitignore": false,
+		"**/.history": false,
+		"**/.npmrc": false,
+		"**/.prettierignore": false,
+		"**/.prettierrc": false,
+		"**/.svelte-kit": false,
+		"**/.vscode": false,
+		"**/node_modules": false,
+		"**/README.md": false
+	}
+}

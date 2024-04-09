@@ -4,7 +4,9 @@
 			Protected Area
 		</h1>
 		<p class="max-w-[700px] text-lg text-muted-foreground">
-			If you are seeing this page, you are logged in.
+			If you are seeing this page, you are logged in. If you are seeing this page, you are logged
+			in. If you are seeing this page, you are logged in. If you are seeing this page, you are
+			logged in. If you are seeing this page, you are logged in.
 		</p>
 	</div>
 </section>
