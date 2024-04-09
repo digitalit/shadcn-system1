@@ -136,36 +136,34 @@
 	style="height:{innerHeight - 105}px"
 	autoSaveId="123"
 >
-	<Pane defaultSize={1 / 4} order={4}>
+	<Pane defaultSize={1 / 4} order={1}>
 		<!-- {#if show1a || show1b || show1c} -->
 		<PaneGroup direction="vertical" autoSaveId="1abc">
-			{#if show1a}
-				<Pane defaultSize={1 / 3}>
+			<Pane defaultSize={1 / 3} order={1}>
+				{#if show1a}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">1a</div>
 					</div>
-				</Pane>
-				{#if show1b || show1c}
-					<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 				{/if}
-			{/if}
-			{#if show1b}
-				<Pane defaultSize={1 / 3}>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+
+			<Pane defaultSize={1 / 3} order={2}>
+				{#if show1b}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">1b</div>
 					</div>
-				</Pane>
-				{#if show1c}
-					<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 				{/if}
-			{/if}
-			{#if show1c}
-				<Pane defaultSize={1 / 3}>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+
+			<Pane defaultSize={1 / 3} order={3}>
+				{#if show1c}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">1c</div>
 					</div>
-				</Pane>
-			{/if}
+				{/if}
+			</Pane>
 		</PaneGroup>
 		<!-- {/if} -->
 	</Pane>
@@ -175,33 +173,31 @@
 	<Pane defaultSize={1 / 4} order={2}>
 		<!-- {#if show2a || show2b || show2c} -->
 		<PaneGroup direction="vertical" autoSaveId="2abc">
-			{#if show2a}
-				<Pane defaultSize={1 / 3}>
+			<Pane defaultSize={1 / 3} order={1}>
+				{#if show2a}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">2a</div>
 					</div>
-				</Pane>
-				{#if show2b || show2c}
-					<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 				{/if}
-			{/if}
-			{#if show2b}
-				<Pane defaultSize={1 / 3}>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+
+			<Pane defaultSize={1 / 3} order={2}>
+				{#if show2b}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">2b</div>
 					</div>
-				</Pane>
-				{#if show2c}
-					<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 				{/if}
-			{/if}
-			{#if show2c}
-				<Pane defaultSize={1 / 3}>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+
+			<Pane defaultSize={1 / 3} order={3}>
+				{#if show2c}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">2c</div>
 					</div>
-				</Pane>
-			{/if}
+				{/if}
+			</Pane>
 		</PaneGroup>
 		<!-- {/if} -->
 	</Pane>
@@ -211,69 +207,65 @@
 	<Pane defaultSize={1 / 4} order={3}>
 		<!-- {#if show3a || show3b || show3c} -->
 		<PaneGroup direction="vertical" autoSaveId="3abc">
-			{#if show3a}
-				<Pane defaultSize={1 / 3}>
+			<Pane defaultSize={1 / 3} order={1}>
+				{#if show3a}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">3a</div>
 					</div>
-				</Pane>
-				{#if show3b || show3c}
-					<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 				{/if}
-			{/if}
-			{#if show3b}
-				<Pane defaultSize={1 / 3}>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+
+			<Pane defaultSize={1 / 3} order={2}>
+				{#if show3b}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">3b</div>
 					</div>
-				</Pane>
-				{#if show3c}
-					<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 				{/if}
-			{/if}
-			{#if show3c}
-				<Pane defaultSize={1 / 3}>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+
+			<Pane defaultSize={1 / 3} order={3}>
+				{#if show3c}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">3c</div>
 					</div>
-				</Pane>
-			{/if}
+				{/if}
+			</Pane>
 		</PaneGroup>
 		<!-- {/if} -->
 	</Pane>
 
 	<PaneResizer class="relative flex w-2 items-center justify-center bg-background" />
 
-	<Pane defaultSize={1 / 4} order={1}>
+	<Pane defaultSize={1 / 4} order={4}>
 		<!-- {#if show4a || show4b || show4c} -->
-		<PaneGroup direction="vertical" autoSaveId="4abc">
-			{#if show4a}
-				<Pane defaultSize={1 / 3}>
+		<PaneGroup direction="vertical" autoSaveId="4aabc">
+			<Pane defaultSize={1 / 3} order={1}>
+				{#if show4a}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">4a</div>
 					</div>
-				</Pane>
-				{#if show4b || show4c}
-					<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 				{/if}
-			{/if}
-			{#if show4b}
-				<Pane defaultSize={1 / 3}>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+
+			<Pane defaultSize={1 / 3} order={2}>
+				{#if show4b}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">4b</div>
 					</div>
-				</Pane>
-				{#if show4c}
-					<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 				{/if}
-			{/if}
-			{#if show4c}
-				<Pane defaultSize={1 / 3}>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+
+			<Pane defaultSize={1 / 3} order={3}>
+				{#if show4c}
 					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
 						<div class="h-full overflow-auto p-6">4c</div>
 					</div>
-				</Pane>
-			{/if}
+				{/if}
+			</Pane>
 		</PaneGroup>
 		<!-- {/if} -->
 	</Pane>
