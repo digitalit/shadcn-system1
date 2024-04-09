@@ -7,49 +7,32 @@
 
 <PaneGroup direction="horizontal" class="w-full h-full px-2" style="height:{innerHeight - 60}px">
 	<Pane defaultSize={50}>
-		<div class="flex items-center justify-center rounded-lg bg-muted">
-			<div class="h-full overflow-auto p-6">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quaerat eos, saepe doloribus
-				facere fugiat! Magni consequatur a veniam quia. Exercitationem recusandae facilis cupiditate
-				repellendus quaerat tenetur minima veniam quia! Lorem ipsum dolor sit amet consectetur
-				adipisicing elit. Excepturi totam voluptates eveniet vel ab velit quas repudiandae quae
-				possimus ad, eligendi commodi perspiciatis nisi tempora vitae ratione non! Praesentium,
-				aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia fuga harum odit
-				doloribus ea. Atque expedita repudiandae, provident suscipit dignissimos cupiditate itaque
-				beatae debitis autem animi qui, quas aspernatur impedit!
-			</div>
-		</div>
+		<PaneGroup direction="vertical">
+			<Pane defaultSize={25}>
+				<div class="flex h-full items-center justify-center rounded-lg bg-muted">
+					<div class="h-full overflow-auto p-6">1111111111</div>
+				</div>
+			</Pane>
+			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			<Pane defaultSize={75}>
+				<div class="flex h-full items-center justify-center rounded-lg bg-muted">
+					<div class="h-full overflow-auto p-6">222222222</div>
+				</div>
+			</Pane>
+		</PaneGroup>
 	</Pane>
 	<PaneResizer class="relative flex w-2 items-center justify-center bg-background" />
 	<Pane defaultSize={50}>
 		<PaneGroup direction="vertical">
 			<Pane defaultSize={25}>
 				<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-					<div class="h-full overflow-auto p-6">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quaerat eos, saepe
-						doloribus facere fugiat! Magni consequatur a veniam quia. Exercitationem recusandae
-						facilis cupiditate repellendus quaerat tenetur minima veniam quia! Lorem ipsum dolor sit
-						amet consectetur adipisicing elit. Excepturi totam voluptates eveniet vel ab velit quas
-						repudiandae quae possimus ad, eligendi commodi perspiciatis nisi tempora vitae ratione
-						non! Praesentium, aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Mollitia fuga harum odit doloribus ea. Atque expedita repudiandae, provident suscipit
-						dignissimos cupiditate itaque beatae debitis autem animi qui, quas aspernatur impedit!
-					</div>
+					<div class="h-full overflow-auto p-6">33333333</div>
 				</div>
 			</Pane>
 			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
 			<Pane defaultSize={75}>
 				<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-					<div class="h-full overflow-auto p-6">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quaerat eos, saepe
-						doloribus facere fugiat! Magni consequatur a veniam quia. Exercitationem recusandae
-						facilis cupiditate repellendus quaerat tenetur minima veniam quia! Lorem ipsum dolor sit
-						amet consectetur adipisicing elit. Excepturi totam voluptates eveniet vel ab velit quas
-						repudiandae quae possimus ad, eligendi commodi perspiciatis nisi tempora vitae ratione
-						non! Praesentium, aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Mollitia fuga harum odit doloribus ea. Atque expedita repudiandae, provident suscipit
-						dignissimos cupiditate itaque beatae debitis autem animi qui, quas aspernatur impedit!
-					</div>
+					<div class="h-full overflow-auto p-6">44444444</div>
 				</div>
 			</Pane>
 		</PaneGroup>

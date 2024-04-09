@@ -40,9 +40,9 @@
 
 <header class="bg-background sticky top-0 z-40 w-full border-b">
 	<div
-		class="container flex {currentPage === '/dashboard'
+		class="flex {currentPage === '/dashboard'
 			? 'h-10'
-			: 'h-16'}  items-center space-x-4 sm:justify-between sm:space-x-0"
+			: 'container h-16'}  items-center space-x-4 sm:justify-between sm:space-x-0"
 	>
 		<div class="flex gap-6 md:gap-10">
 			{#if currentPage !== '/dashboard'}
