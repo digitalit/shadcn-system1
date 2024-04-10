@@ -6,8 +6,14 @@
 	$: innerHeight = 0;
 
 	let show1a = true;
+	let width1: number;
+	let height1a: number;
+
 	let show1b = true;
+	let height1b: number;
+
 	let show1c = true;
+	let height1c: number;
 
 	let show2a = true;
 	let show2b = true;
@@ -151,8 +157,12 @@
 		<Resizable.PaneGroup direction="vertical" autoSaveId="1abc">
 			<Resizable.Pane defaultSize={1 / 3} order={1}>
 				{#if show1a}
-					<div class="flex h-full items-center justify-center p-6">
-						<span class="font-semibold">1a</span>
+					<div
+						bind:clientWidth={width1}
+						bind:clientHeight={height1a}
+						class="flex h-full items-center justify-center p-6"
+					>
+						<span class="font-semibold">width1: {width1} height1a: {height1a}</span>
 					</div>
 				{/if}
 			</Resizable.Pane>
@@ -164,8 +174,8 @@
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show1b}
-					<div class="flex h-full items-center justify-center p-6">
-						<span class="font-semibold">1b</span>
+					<div bind:clientHeight={height1b} class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">width1: {width1} height1b: {height1b}</span>
 					</div>
 				{/if}
 			</Resizable.Pane>
@@ -177,8 +187,8 @@
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show1c}
-					<div class="flex h-full items-center justify-center p-6">
-						<span class="font-semibold">1c</span>
+					<div bind:clientHeight={height1c} class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">width1: {width1} height1c: {height1c}</span>
 					</div>
 				{/if}
 			</Resizable.Pane>
