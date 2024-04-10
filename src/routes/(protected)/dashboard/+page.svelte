@@ -1,12 +1,16 @@
 <script lang="ts">
 	import * as Resizable from '$lib/components/ui/resizable/index.js';
 	import { Button } from '$lib/components/ui/button';
+	import type { PaneAPI } from 'paneforge';
 
 	// STORES
 	import { settingsStoreA } from '$lib/modules/settingsStoreA';
 
 	$: innerWidth = 0;
 	$: innerHeight = 0;
+
+	let show1a: PaneAPI;
+	let collapsed = false;
 
 	let width1: number;
 	let height1a: number;
@@ -31,6 +35,28 @@
 </script>
 
 <div class="flex items-center gap-2 pb-2">
+	{#if collapsed}
+		{show1a.getSize()}
+		<Button
+			variant="outline"
+			on:click={() => {
+				show1a.expand();
+			}}
+		>
+			Expand Pane One
+		</Button>
+	{:else}
+		<Button
+			variant="outline"
+			on:click={() => {
+				show1a.collapse();
+				//show1a.resize(5);
+			}}
+		>
+			Collapse Pane One
+		</Button>
+	{/if}
+
 	<Button
 		size="xs"
 		variant="outline"
@@ -157,7 +183,16 @@
 >
 	<Resizable.Pane defaultSize={1 / 4} order={1}>
 		<Resizable.PaneGroup direction="vertical" autoSaveId="1abc">
-			<Resizable.Pane defaultSize={1 / 3} order={1}>
+			<Resizable.Pane
+				collapsedSize={1}
+				collapsible={true}
+				minSize={5}
+				bind:pane={show1a}
+				onCollapse={() => (collapsed = true)}
+				onExpand={() => (collapsed = false)}
+				defaultSize={1 / 3}
+				order={1}
+			>
 				{#if $settingsStoreA.show1a}
 					<div
 						bind:clientWidth={width1}

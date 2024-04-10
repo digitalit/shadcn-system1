@@ -13,6 +13,9 @@
 
 	import * as Menubar from '$lib/components/ui/menubar';
 
+	// STORES
+	import { settingsStoreA } from '$lib/modules/settingsStoreA';
+
 	let bookmarks = false;
 	let fullUrls = true;
 
@@ -166,6 +169,11 @@
 					</Menubar.Menu>
 					<Menubar.Menu>
 						<Menubar.Item href="/dashboard">dashboard</Menubar.Item>
+						<Menubar.Item
+							on:click={() => {
+								$settingsStoreA.show1a = !$settingsStoreA.show1a;
+							}}>{$settingsStoreA.show1a ? 'Hide' : 'Show'} 1a</Menubar.Item
+						>
 					</Menubar.Menu>
 				</Menubar.Root>
 			{/if}
