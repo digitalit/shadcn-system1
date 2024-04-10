@@ -24,6 +24,7 @@
 
 <div class="flex items-center gap-2 pb-2">
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show1a = !show1a;
@@ -32,6 +33,7 @@
 		{show1a ? 'Hide' : 'Show'} 1a
 	</Button>
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show1b = !show1b;
@@ -40,6 +42,7 @@
 		{show1b ? 'Hide' : 'Show'} 1b
 	</Button>
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show1c = !show1c;
@@ -51,6 +54,7 @@
 	-
 
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show2a = !show2a;
@@ -59,6 +63,7 @@
 		{show2a ? 'Hide' : 'Show'} 2a
 	</Button>
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show2b = !show2b;
@@ -67,6 +72,7 @@
 		{show2b ? 'Hide' : 'Show'} 2b
 	</Button>
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show2c = !show2c;
@@ -78,6 +84,7 @@
 	-
 
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show3a = !show3a;
@@ -86,6 +93,7 @@
 		{show3a ? 'Hide' : 'Show'} 3a
 	</Button>
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show3b = !show3b;
@@ -94,6 +102,7 @@
 		{show3b ? 'Hide' : 'Show'} 3b
 	</Button>
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show3c = !show3c;
@@ -105,6 +114,7 @@
 	-
 
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show4a = !show4a;
@@ -113,6 +123,7 @@
 		{show4a ? 'Hide' : 'Show'} 4a
 	</Button>
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show4b = !show4b;
@@ -121,6 +132,7 @@
 		{show4b ? 'Hide' : 'Show'} 4b
 	</Button>
 	<Button
+		size="xs"
 		variant="outline"
 		on:click={() => {
 			show4c = !show4c;
