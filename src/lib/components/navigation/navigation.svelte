@@ -134,8 +134,11 @@
 					<Menubar.Menu>
 						<Menubar.Trigger>View</Menubar.Trigger>
 						<Menubar.Content>
-							<Menubar.CheckboxItem bind:checked={bookmarks}
-								>Always Show Bookmarks Bar</Menubar.CheckboxItem
+							<Menubar.CheckboxItem
+								on:click={() => {
+									$settingsStoreA.show1a = !$settingsStoreA.show1a;
+								}}
+								bind:checked={$settingsStoreA.show1a}>Show 1a</Menubar.CheckboxItem
 							>
 							<Menubar.CheckboxItem bind:checked={fullUrls}>
 								Always Show Full URLs
