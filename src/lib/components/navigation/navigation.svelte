@@ -40,12 +40,12 @@
 
 <header class="bg-background sticky top-0 z-40 w-full border-b">
 	<div
-		class="flex {currentPage === '/dashboard'
+		class="flex {currentPage === '/dashboard' || currentPage === '/dashboardt'
 			? 'px-1 h-10'
 			: 'container h-16'}  items-center space-x-4 sm:justify-between sm:space-x-0"
 	>
 		<div class="flex gap-6 md:gap-10">
-			{#if currentPage !== '/dashboard'}
+			{#if currentPage !== '/dashboard' && currentPage !== '/dashboardt'}
 				<a class="flex items-center space-x-2" href="/"
 					><Logo size="24"></Logo><span class="inline-block font-bold">{APP_NAME}</span></a
 				>
@@ -75,16 +75,16 @@
 					>
 				</nav>
 			{/if}
-			{#if currentPage === '/dashboard'}
+			{#if currentPage === '/dashboard' || currentPage === '/dashboardt'}
 				<Menubar.Root>
 					<Menubar.Menu>
-						<Menubar.Trigger>File</Menubar.Trigger>
+						<Menubar.Trigger>test</Menubar.Trigger>
 						<Menubar.Content>
-							<Menubar.Item>
-								New Tab <Menubar.Shortcut>⌘T</Menubar.Shortcut>
+							<Menubar.Item href="/dashboard">
+								dashboard <Menubar.Shortcut>⌘T</Menubar.Shortcut>
 							</Menubar.Item>
-							<Menubar.Item>
-								New Window <Menubar.Shortcut>⌘N</Menubar.Shortcut>
+							<Menubar.Item href="/dashboardt">
+								dashboardt<Menubar.Shortcut>⌘N</Menubar.Shortcut>
 							</Menubar.Item>
 							<Menubar.Item>New Incognito Window</Menubar.Item>
 							<Menubar.Separator />
@@ -164,6 +164,10 @@
 							<Menubar.Item inset>Add Profile...</Menubar.Item>
 						</Menubar.Content>
 					</Menubar.Menu>
+					<Menubar.Menu>
+						<Menubar.Item href="/dashboard">dashboard</Menubar.Item>
+						<Menubar.Item href="/dashboardt">dashboardt</Menubar.Item>
+					</Menubar.Menu>
 				</Menubar.Root>
 			{/if}
 		</div>
@@ -214,7 +218,7 @@
 								</DropdownMenu.Item>
 							</DropdownMenu.Group>
 							<DropdownMenu.Group>
-								{#if currentPage === '/dashboard'}
+								{#if currentPage === '/dashboard' || currentPage === '/dashboardt'}
 									<DropdownMenu.Item on:click={() => goto('/')}>
 										<UserRound class="mr-2 h-4 w-4" />
 										www

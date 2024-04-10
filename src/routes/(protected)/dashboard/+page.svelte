@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PaneGroup, Pane, PaneResizer } from 'paneforge';
+	import * as Resizable from '$lib/components/ui/resizable/index.js';
 	import { Button } from '$lib/components/ui/button';
 
 	$: innerWidth = 0;
@@ -22,7 +22,7 @@
 	let show4c = true;
 </script>
 
-<div class="flex items-center gap-2 pl-2 pb-2">
+<div class="flex items-center gap-2 pb-2">
 	<Button
 		variant="outline"
 		on:click={() => {
@@ -130,145 +130,177 @@
 	</Button>
 </div>
 
-<PaneGroup
+<Resizable.PaneGroup
 	direction="horizontal"
-	class="w-full h-full px-2"
-	style="height:{innerHeight - 105}px"
+	style="height:{innerHeight - 105}px;background-color:#ccc;"
 	autoSaveId="123"
 >
-	<Pane defaultSize={1 / 4} order={1}>
-		<!-- {#if show1a || show1b || show1c} -->
-		<PaneGroup direction="vertical" autoSaveId="1abc">
-			<Pane defaultSize={1 / 3} order={1}>
+	<Resizable.Pane defaultSize={1 / 4} order={1}>
+		<Resizable.PaneGroup direction="vertical" autoSaveId="1abc">
+			<Resizable.Pane defaultSize={1 / 3} order={1}>
 				{#if show1a}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">1a</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">1a</span>
 					</div>
 				{/if}
-			</Pane>
-			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			</Resizable.Pane>
 
-			<Pane defaultSize={1 / 3} order={2}>
+			<Resizable.Handle
+				withHandle
+				class="relative flex items-center justify-center bg-background"
+			/>
+
+			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show1b}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">1b</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">1b</span>
 					</div>
 				{/if}
-			</Pane>
-			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			</Resizable.Pane>
 
-			<Pane defaultSize={1 / 3} order={3}>
+			<Resizable.Handle
+				withHandle
+				class="relative flex h-2 items-center justify-center bg-background"
+			/>
+
+			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show1c}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">1c</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">1c</span>
 					</div>
 				{/if}
-			</Pane>
-		</PaneGroup>
-		<!-- {/if} -->
-	</Pane>
+			</Resizable.Pane>
+		</Resizable.PaneGroup>
+	</Resizable.Pane>
 
-	<PaneResizer class="relative flex w-2 items-center justify-center bg-background" />
+	<Resizable.Handle
+		withHandle
+		class="relative flex w-0.5 items-center justify-center bg-background"
+	/>
 
-	<Pane defaultSize={1 / 4} order={2}>
-		<!-- {#if show2a || show2b || show2c} -->
-		<PaneGroup direction="vertical" autoSaveId="2abc">
-			<Pane defaultSize={1 / 3} order={1}>
+	<Resizable.Pane defaultSize={1 / 4} order={2}>
+		<Resizable.PaneGroup direction="vertical" autoSaveId="2abc">
+			<Resizable.Pane defaultSize={1 / 3} order={1}>
 				{#if show2a}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">2a</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">2a</span>
 					</div>
 				{/if}
-			</Pane>
-			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			</Resizable.Pane>
 
-			<Pane defaultSize={1 / 3} order={2}>
+			<Resizable.Handle
+				withHandle
+				class="relative flex items-center justify-center bg-background"
+			/>
+
+			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show2b}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">2b</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">2b</span>
 					</div>
 				{/if}
-			</Pane>
-			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			</Resizable.Pane>
 
-			<Pane defaultSize={1 / 3} order={3}>
+			<Resizable.Handle
+				withHandle
+				class="relative flex h-2 items-center justify-center bg-background"
+			/>
+
+			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show2c}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">2c</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">2c</span>
 					</div>
 				{/if}
-			</Pane>
-		</PaneGroup>
-		<!-- {/if} -->
-	</Pane>
+			</Resizable.Pane>
+		</Resizable.PaneGroup>
+	</Resizable.Pane>
 
-	<PaneResizer class="relative flex w-2 items-center justify-center bg-background" />
+	<Resizable.Handle
+		withHandle
+		class="relative flex w-0.5 items-center justify-center bg-background"
+	/>
 
-	<Pane defaultSize={1 / 4} order={3}>
-		<!-- {#if show3a || show3b || show3c} -->
-		<PaneGroup direction="vertical" autoSaveId="3abc">
-			<Pane defaultSize={1 / 3} order={1}>
+	<Resizable.Pane defaultSize={1 / 4} order={2}>
+		<Resizable.PaneGroup direction="vertical" autoSaveId="3abc">
+			<Resizable.Pane defaultSize={1 / 3} order={1}>
 				{#if show3a}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">3a</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">3a</span>
 					</div>
 				{/if}
-			</Pane>
-			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			</Resizable.Pane>
 
-			<Pane defaultSize={1 / 3} order={2}>
+			<Resizable.Handle
+				withHandle
+				class="relative flex items-center justify-center bg-background"
+			/>
+
+			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show3b}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">3b</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">3b</span>
 					</div>
 				{/if}
-			</Pane>
-			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			</Resizable.Pane>
 
-			<Pane defaultSize={1 / 3} order={3}>
+			<Resizable.Handle
+				withHandle
+				class="relative flex h-2 items-center justify-center bg-background"
+			/>
+
+			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show3c}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">3c</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">3c</span>
 					</div>
 				{/if}
-			</Pane>
-		</PaneGroup>
-		<!-- {/if} -->
-	</Pane>
+			</Resizable.Pane>
+		</Resizable.PaneGroup>
+	</Resizable.Pane>
 
-	<PaneResizer class="relative flex w-2 items-center justify-center bg-background" />
+	<Resizable.Handle
+		withHandle
+		class="relative flex w-0.5 items-center justify-center bg-background"
+	/>
 
-	<Pane defaultSize={1 / 4} order={4}>
-		<!-- {#if show4a || show4b || show4c} -->
-		<PaneGroup direction="vertical" autoSaveId="4aabc">
-			<Pane defaultSize={1 / 3} order={1}>
+	<Resizable.Pane defaultSize={1 / 4} order={2}>
+		<Resizable.PaneGroup direction="vertical" autoSaveId="4abc">
+			<Resizable.Pane defaultSize={1 / 3} order={1}>
 				{#if show4a}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">4a</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">4a</span>
 					</div>
 				{/if}
-			</Pane>
-			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			</Resizable.Pane>
 
-			<Pane defaultSize={1 / 3} order={2}>
+			<Resizable.Handle
+				withHandle
+				class="relative flex items-center justify-center bg-background"
+			/>
+
+			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show4b}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">4b</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">4b</span>
 					</div>
 				{/if}
-			</Pane>
-			<PaneResizer class="relative flex h-2 items-center justify-center bg-background" />
+			</Resizable.Pane>
 
-			<Pane defaultSize={1 / 3} order={3}>
+			<Resizable.Handle
+				withHandle
+				class="relative flex h-2 items-center justify-center bg-background"
+			/>
+
+			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show4c}
-					<div class="flex h-full items-center justify-center rounded-lg bg-muted">
-						<div class="h-full overflow-auto p-6">4c</div>
+					<div class="flex h-full items-center justify-center p-6">
+						<span class="font-semibold">4c</span>
 					</div>
 				{/if}
-			</Pane>
-		</PaneGroup>
-		<!-- {/if} -->
-	</Pane>
-</PaneGroup>
+			</Resizable.Pane>
+		</Resizable.PaneGroup>
+	</Resizable.Pane>
+</Resizable.PaneGroup>
 
 <svelte:window bind:innerWidth bind:innerHeight />
