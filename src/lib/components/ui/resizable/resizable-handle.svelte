@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GripVertical } from 'lucide-svelte';
+	import { GripHorizontal, GripVertical } from 'lucide-svelte';
 	import * as ResizablePrimitive from 'paneforge';
 	import { cn } from '$lib/utils.js';
 

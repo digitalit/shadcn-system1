@@ -40,12 +40,12 @@
 
 <header class="bg-background sticky top-0 z-40 w-full border-b">
 	<div
-		class="flex {currentPage === '/dashboard' || currentPage === '/dashboardt'
+		class="flex {currentPage === '/dashboard'
 			? 'px-1 h-10'
 			: 'container h-16'}  items-center space-x-4 sm:justify-between sm:space-x-0"
 	>
 		<div class="flex gap-6 md:gap-10">
-			{#if currentPage !== '/dashboard' && currentPage !== '/dashboardt'}
+			{#if currentPage !== '/dashboard'}
 				<a class="flex items-center space-x-2" href="/"
 					><Logo size="24"></Logo><span class="inline-block font-bold">{APP_NAME}</span></a
 				>
@@ -75,7 +75,7 @@
 					>
 				</nav>
 			{/if}
-			{#if currentPage === '/dashboard' || currentPage === '/dashboardt'}
+			{#if currentPage === '/dashboard'}
 				<Menubar.Root>
 					<Menubar.Menu>
 						<Menubar.Trigger>test</Menubar.Trigger>
@@ -166,7 +166,6 @@
 					</Menubar.Menu>
 					<Menubar.Menu>
 						<Menubar.Item href="/dashboard">dashboard</Menubar.Item>
-						<Menubar.Item href="/dashboardt">dashboardt</Menubar.Item>
 					</Menubar.Menu>
 				</Menubar.Root>
 			{/if}
@@ -218,7 +217,7 @@
 								</DropdownMenu.Item>
 							</DropdownMenu.Group>
 							<DropdownMenu.Group>
-								{#if currentPage === '/dashboard' || currentPage === '/dashboardt'}
+								{#if currentPage === '/dashboard'}
 									<DropdownMenu.Item on:click={() => goto('/')}>
 										<UserRound class="mr-2 h-4 w-4" />
 										www

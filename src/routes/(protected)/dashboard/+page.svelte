@@ -144,8 +144,8 @@
 
 <Resizable.PaneGroup
 	direction="horizontal"
-	style="height:{innerHeight - 105}px;background-color:#ccc;"
-	autoSaveId="123"
+	style="height:{innerHeight - 90}px;background-color:#ccc;"
+	autoSaveId="1234"
 >
 	<Resizable.Pane defaultSize={1 / 4} order={1}>
 		<Resizable.PaneGroup direction="vertical" autoSaveId="1abc">
@@ -159,7 +159,7 @@
 
 			<Resizable.Handle
 				withHandle
-				class="relative flex items-center justify-center bg-background"
+				class="relative flex h-2.5 items-center justify-center bg-background"
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
