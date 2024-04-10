@@ -2,10 +2,12 @@
 	import * as Resizable from '$lib/components/ui/resizable/index.js';
 	import { Button } from '$lib/components/ui/button';
 
+	// STORES
+	import { settingsStoreA } from '$lib/modules/settingsStoreA';
+
 	$: innerWidth = 0;
 	$: innerHeight = 0;
 
-	let show1a = true;
 	let width1: number;
 	let height1a: number;
 
@@ -33,10 +35,10 @@
 		size="xs"
 		variant="outline"
 		on:click={() => {
-			show1a = !show1a;
+			$settingsStoreA.show1a = !$settingsStoreA.show1a;
 		}}
 	>
-		{show1a ? 'Hide' : 'Show'} 1a
+		{$settingsStoreA.show1a ? 'Hide' : 'Show'} 1a
 	</Button>
 	<Button
 		size="xs"
@@ -156,7 +158,7 @@
 	<Resizable.Pane defaultSize={1 / 4} order={1}>
 		<Resizable.PaneGroup direction="vertical" autoSaveId="1abc">
 			<Resizable.Pane defaultSize={1 / 3} order={1}>
-				{#if show1a}
+				{#if $settingsStoreA.show1a}
 					<div
 						bind:clientWidth={width1}
 						bind:clientHeight={height1a}
