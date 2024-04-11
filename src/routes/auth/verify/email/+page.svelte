@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { APP_NAME } from '$lib/config/constants';
+	import { APP_NAME } from '$config/constants';
 	export let data;
 </script>
 

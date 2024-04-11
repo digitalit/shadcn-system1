@@ -6,7 +6,7 @@
 		TERMS_PRIVACY_APP_NAME,
 		TERMS_PRIVACY_APP_PRICING_AND_SUBSCRIPTIONS,
 		TERMS_PRIVACY_COUNTRY
-	} from '$lib/config/constants';
+	} from '$config/constants';
 </script>
 
 <section class="container grid items-center gap-6">

@@ -4,7 +4,7 @@
 		TERMS_PRIVACY_EFFECTIVE_DATE,
 		TERMS_PRIVACY_WEBSITE,
 		TERMS_PRIVACY_CONTACT_EMAIL
-	} from '$lib/config/constants';
+	} from '$config/constants';
 </script>
 
 <section class="container grid items-center gap-6">

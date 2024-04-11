@@ -2,7 +2,7 @@ import { redirect } from '@sveltejs/kit';
 import { getUserByEmail, createUser } from '$lib/server/database/user-model.js';
 import { googleOauth, lucia } from '$lib/server/lucia';
 import { OAuth2RequestError } from 'arctic';
-import { sendVerificationEmail } from '$lib/config/email-messages';
+import { sendVerificationEmail } from '$config/email-messages';
 import { setFlash } from 'sveltekit-flash-message/server';
 //import type { RequestEvent } from '@sveltejs/kit';
 

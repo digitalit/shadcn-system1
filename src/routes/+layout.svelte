@@ -4,9 +4,9 @@
 	import { page } from '$app/stores';
 	import { ModeWatcher } from 'mode-watcher';
 	import { getFlash } from 'sveltekit-flash-message';
-	import { Toaster } from '$lib/components/ui/sonner';
+	import { Toaster } from '$ui/sonner';
 	import { toast } from 'svelte-sonner';
-	import Navigation from '$lib/components/navigation/navigation.svelte';
+	import Navigation from '$components/navigation/navigation.svelte';
 
 	export let data: any;
 	let user: PageData['user'];

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import * as Resizable from '$lib/components/ui/resizable/index.js';
-	import { Button } from '$lib/components/ui/button';
+	import * as Resizable from '$ui/resizable/index.js';
+	import { Button } from '$ui/button';
 	import type { PaneAPI } from 'paneforge';
 
 	// STORES
-	import { settingsStoreA } from '$lib/modules/settingsStoreA';
+	import { settingsStoreA } from '$modules/settingsStoreA';
 
 	$: innerWidth = 0;
 	$: innerHeight = 0;

@@ -1,27 +1,27 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import * as Command from '$lib/components/ui/command';
-	import * as Avatar from '$lib/components/ui/avatar';
+	import { Button } from '$ui/button';
+	import * as DropdownMenu from '$ui/dropdown-menu';
+	import * as Command from '$ui/command';
+	import * as Avatar from '$ui/avatar';
 	import { Sun, Moon, SunMoon, UserRound, LogOut } from 'lucide-svelte';
 	import { setMode, resetMode } from 'mode-watcher';
-	import { APP_NAME } from '$lib/config/constants';
+	import { APP_NAME } from '$config/constants';
 	import Logo from '$lib/components/logo/logo.svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import convertNameToInitials from '$lib/_helpers/convertNameToInitials';
 
-	import * as Menubar from '$lib/components/ui/menubar';
+	import * as Menubar from '$ui/menubar';
 
 	// STORES
 	import { settingsStoreA } from '$lib/modules/settingsStoreA';
 
-	let bookmarks = false;
 	let fullUrls = true;
 
 	const profileRadioValue = 'benoit';
 
 	export let user: any;
+
 	$: currentPage = $page.url.pathname;
 
 	function signOut() {
@@ -54,27 +54,17 @@
 				>
 
 				<nav class="flex gap-6">
-					<a
-						class="flex items-center text-sm font-medium text-muted-foreground"
-						href="/"
-						class:active={'/' === currentPage}>Home</a
+					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/">Home</a>
+
+					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/terms"
+						>terms</a
+					>
+					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/privacy"
+						>privacy</a
 					>
 
-					<a
-						class="flex items-center text-sm font-medium text-muted-foreground"
-						href="/terms"
-						class:active={'/terms' === currentPage}>terms</a
-					>
-					<a
-						class="flex items-center text-sm font-medium text-muted-foreground"
-						href="/privacy"
-						class:active={'/privacy' === currentPage}>privacy</a
-					>
-
-					<a
-						class="flex items-center text-sm font-medium text-muted-foreground"
-						href="/dashboard"
-						class:active={'/dashboard' === currentPage}>admin</a
+					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/dashboard"
+						>admin</a
 					>
 				</nav>
 			{/if}
@@ -171,7 +161,7 @@
 						</Menubar.Content>
 					</Menubar.Menu>
 					<Menubar.Menu>
-						<Menubar.Item href="/dashboard">dashboard</Menubar.Item>
+						<Menubar.Item href="/">www</Menubar.Item>
 						<Menubar.Item
 							on:click={() => {
 								$settingsStoreA.show1a = !$settingsStoreA.show1a;
@@ -278,9 +268,3 @@
 		</div>
 	</div>
 </header>
-
-<style>
-	.active {
-		@apply text-primary;
-	}
-</style>

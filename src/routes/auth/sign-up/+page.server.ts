@@ -5,8 +5,8 @@ import { Argon2id } from 'oslo/password';
 import { lucia } from '$lib/server/lucia';
 import { createUser } from '$lib/server/database/user-model';
 
-import { userSchema } from '$lib/config/zod-schemas';
-import { sendVerificationEmail } from '$lib/config/email-messages';
+import { userSchema } from '$config/zod-schemas';
+import { sendVerificationEmail } from '$config/email-messages';
 
 const signUpSchema = userSchema.pick({
 	firstName: true,

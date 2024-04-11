@@ -5,10 +5,5 @@
 		"config": "tailwind.config.js",
 		"css": "src/app.pcss",
 		"baseColor": "slate"
-	},
-	"aliases": {
-		"components": "$lib/components",
-		"modules": "$lib/modules",
-		"utils": "$lib/utils"
 	}
 }

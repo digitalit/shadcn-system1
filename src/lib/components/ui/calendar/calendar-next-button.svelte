@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Calendar as CalendarPrimitive } from "bits-ui";
 	import { ChevronRight } from "lucide-svelte";
-	import { buttonVariants } from "$lib/components/ui/button";
+	import { buttonVariants } from "$ui/button";
 	import { cn } from "$lib/utils";
 
 	type $$Props = CalendarPrimitive.NextButtonProps;
