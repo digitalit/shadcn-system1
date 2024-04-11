@@ -43,32 +43,14 @@
 
 <header class="bg-background sticky top-0 z-40 w-full border-b">
 	<div
-		class="flex {currentPage === '/dashboard'
+		class="flex {currentPage?.startsWith('/dashboard')
 			? 'px-1 h-10'
 			: 'container h-16'}  items-center space-x-4 sm:justify-between sm:space-x-0"
-	>
+	> 
 		<div class="flex gap-6 md:gap-10">
-			{#if currentPage !== '/dashboard'}
-				<a class="flex items-center space-x-2" href="/"
-					><Logo size="24"></Logo><span class="inline-block font-bold">{APP_NAME}</span></a
-				>
+				<!-- {#if currentPage === '/dashboard/'} -->
 
-				<nav class="flex gap-6">
-					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/">Home</a>
-
-					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/terms"
-						>terms</a
-					>
-					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/privacy"
-						>privacy</a
-					>
-
-					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/dashboard"
-						>admin</a
-					>
-				</nav>
-			{/if}
-			{#if currentPage === '/dashboard'}
+			{#if currentPage?.startsWith('/dashboard')}
 				<Menubar.Root>
 					<Menubar.Menu>
 						<Menubar.Trigger>test</Menubar.Trigger>
@@ -169,7 +151,27 @@
 						>
 					</Menubar.Menu>
 				</Menubar.Root>
+			{:else}
+				<a class="flex items-center space-x-2" href="/"
+					><Logo size="24"></Logo><span class="inline-block font-bold">{APP_NAME}</span></a
+				>
+
+				<nav class="flex gap-6">
+					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/">Home</a>
+
+					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/terms"
+						>terms</a
+					>
+					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/privacy"
+						>privacy</a
+					>
+
+					<a class="flex items-center text-sm font-medium text-muted-foreground" href="/dashboard"
+						>admin</a
+					>
+				</nav>
 			{/if}
+		
 		</div>
 		<div class="flex flex-1 items-center justify-end space-x-4">
 			<nav class="flex items-center space-x-1">
@@ -218,7 +220,7 @@
 								</DropdownMenu.Item>
 							</DropdownMenu.Group>
 							<DropdownMenu.Group>
-								{#if currentPage === '/dashboard'}
+								{#if currentPage?.startsWith('/dashboard')}
 									<DropdownMenu.Item on:click={() => goto('/')}>
 										<UserRound class="mr-2 h-4 w-4" />
 										www
