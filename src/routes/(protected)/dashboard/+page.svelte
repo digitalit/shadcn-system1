@@ -35,25 +35,26 @@
 </script>
 
 <div class="flex items-center gap-2 pb-2">
-	{#if collapsed}
-		{show1a.getSize()}
+	{#if collapsed} 
 		<Button
+		size="xs"
 			variant="outline"
 			on:click={() => {
 				show1a.expand();
 			}}
 		>
-			Expand Pane One
+			Expand show1a
 		</Button>
 	{:else}
 		<Button
+		size="xs"
 			variant="outline"
 			on:click={() => {
 				show1a.collapse();
 				//show1a.resize(5);
 			}}
 		>
-			Collapse Pane One
+			Collapse show1a
 		</Button>
 	{/if}
 
@@ -205,8 +206,7 @@
 			</Resizable.Pane>
 
 			<Resizable.Handle
-				withHandle
-				class="relative flex h-2.5 items-center justify-center bg-background"
+				withHandle 
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
@@ -219,7 +219,6 @@
 
 			<Resizable.Handle
 				withHandle
-				class="relative flex h-2 items-center justify-center bg-background"
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
@@ -234,7 +233,6 @@
 
 	<Resizable.Handle
 		withHandle
-		class="relative flex w-0.5 items-center justify-center bg-background"
 	/>
 
 	<Resizable.Pane defaultSize={1 / 4} order={2}>
@@ -249,7 +247,6 @@
 
 			<Resizable.Handle
 				withHandle
-				class="relative flex items-center justify-center bg-background"
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
@@ -262,7 +259,6 @@
 
 			<Resizable.Handle
 				withHandle
-				class="relative flex h-2 items-center justify-center bg-background"
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
@@ -277,7 +273,6 @@
 
 	<Resizable.Handle
 		withHandle
-		class="relative flex w-0.5 items-center justify-center bg-background"
 	/>
 
 	<Resizable.Pane defaultSize={1 / 4} order={2}>
@@ -292,7 +287,6 @@
 
 			<Resizable.Handle
 				withHandle
-				class="relative flex items-center justify-center bg-background"
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
@@ -305,7 +299,6 @@
 
 			<Resizable.Handle
 				withHandle
-				class="relative flex h-2 items-center justify-center bg-background"
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
@@ -320,7 +313,6 @@
 
 	<Resizable.Handle
 		withHandle
-		class="relative flex w-0.5 items-center justify-center bg-background"
 	/>
 
 	<Resizable.Pane defaultSize={1 / 4} order={2}>
@@ -335,7 +327,6 @@
 
 			<Resizable.Handle
 				withHandle
-				class="relative flex items-center justify-center bg-background"
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
@@ -348,7 +339,6 @@
 
 			<Resizable.Handle
 				withHandle
-				class="relative flex h-2 items-center justify-center bg-background"
 			/>
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
