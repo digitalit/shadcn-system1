@@ -35,9 +35,9 @@
 </script>
 
 <div class="flex items-center gap-2 pb-2">
-	{#if collapsed} 
+	{#if collapsed}
 		<Button
-		size="xs"
+			size="xs"
 			variant="outline"
 			on:click={() => {
 				show1a.expand();
@@ -47,7 +47,7 @@
 		</Button>
 	{:else}
 		<Button
-		size="xs"
+			size="xs"
 			variant="outline"
 			on:click={() => {
 				show1a.collapse();
@@ -205,9 +205,7 @@
 				{/if}
 			</Resizable.Pane>
 
-			<Resizable.Handle
-				withHandle 
-			/>
+			<Resizable.Handle withHandle />
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show1b}
@@ -217,9 +215,7 @@
 				{/if}
 			</Resizable.Pane>
 
-			<Resizable.Handle
-				withHandle
-			/>
+			<Resizable.Handle withHandle />
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show1c}
@@ -231,9 +227,7 @@
 		</Resizable.PaneGroup>
 	</Resizable.Pane>
 
-	<Resizable.Handle
-		withHandle
-	/>
+	<Resizable.Handle withHandle />
 
 	<Resizable.Pane defaultSize={1 / 4} order={2}>
 		<Resizable.PaneGroup direction="vertical" autoSaveId="2abc">
@@ -245,9 +239,7 @@
 				{/if}
 			</Resizable.Pane>
 
-			<Resizable.Handle
-				withHandle
-			/>
+			<Resizable.Handle withHandle />
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show2b}
@@ -257,9 +249,7 @@
 				{/if}
 			</Resizable.Pane>
 
-			<Resizable.Handle
-				withHandle
-			/>
+			<Resizable.Handle withHandle />
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show2c}
@@ -271,9 +261,7 @@
 		</Resizable.PaneGroup>
 	</Resizable.Pane>
 
-	<Resizable.Handle
-		withHandle
-	/>
+	<Resizable.Handle withHandle />
 
 	<Resizable.Pane defaultSize={1 / 4} order={2}>
 		<Resizable.PaneGroup direction="vertical" autoSaveId="3abc">
@@ -285,9 +273,7 @@
 				{/if}
 			</Resizable.Pane>
 
-			<Resizable.Handle
-				withHandle
-			/>
+			<Resizable.Handle withHandle />
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show3b}
@@ -297,9 +283,7 @@
 				{/if}
 			</Resizable.Pane>
 
-			<Resizable.Handle
-				withHandle
-			/>
+			<Resizable.Handle withHandle />
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show3c}
@@ -311,9 +295,7 @@
 		</Resizable.PaneGroup>
 	</Resizable.Pane>
 
-	<Resizable.Handle
-		withHandle
-	/>
+	<Resizable.Handle withHandle />
 
 	<Resizable.Pane defaultSize={1 / 4} order={2}>
 		<Resizable.PaneGroup direction="vertical" autoSaveId="4abc">
@@ -325,9 +307,7 @@
 				{/if}
 			</Resizable.Pane>
 
-			<Resizable.Handle
-				withHandle
-			/>
+			<Resizable.Handle withHandle />
 
 			<Resizable.Pane defaultSize={1 / 3} order={2}>
 				{#if show4b}
@@ -337,9 +317,7 @@
 				{/if}
 			</Resizable.Pane>
 
-			<Resizable.Handle
-				withHandle
-			/>
+			<Resizable.Handle withHandle />
 
 			<Resizable.Pane defaultSize={1 / 3} order={3}>
 				{#if show4c}

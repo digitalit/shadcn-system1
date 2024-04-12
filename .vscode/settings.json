@@ -1,20 +1,20 @@
 {
 	"files.exclude": {
-		"**/.git": false,
-		"**/.svn": false,
-		"**/.hg": false,
-		"**/CVS": false,
-		"**/.env": false,
-		"**/.eslintignore": false,
-		"**/.eslintrc.cjs": false,
-		"**/.gitignore": false,
-		"**/.history": false,
-		"**/.npmrc": false,
-		"**/.prettierignore": false,
-		"**/.prettierrc": false,
-		"**/.svelte-kit": false,
-		"**/.vscode": false,
-		"**/node_modules": false,
-		"**/README.md": false
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.env": true,
+		"**/.eslintignore": true,
+		"**/.eslintrc.cjs": true,
+		"**/.gitignore": true,
+		"**/.history": true,
+		"**/.npmrc": true,
+		"**/.prettierignore": true,
+		"**/.prettierrc": true,
+		"**/.svelte-kit": true,
+		"**/.vscode": true,
+		"**/node_modules": true,
+		"**/README.md": true
 	}
 }

@@ -44,7 +44,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@aws-sdk/client-ses": "^3.470.0",
 		"@axiomhq/js": "^1.0.0-rc.1",
 		"@internationalized/date": "^3.5.0",
 		"@lucia-auth/adapter-drizzle": "^1.0.2",
@@ -61,6 +60,7 @@
 		"oslo": "^1.1.2",
 		"paneforge": "^0.0.3",
 		"pg": "^8.11.3",
+		"svelte-i18n": "^4.0.0",
 		"svelte-persisted-store": "^0.9.1",
 		"svelte-sonner": "^0.3.11",
 		"tailwind-merge": "^2.1.0",
